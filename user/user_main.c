@@ -54,8 +54,8 @@ const char *gpio_type_desc[] =
 	    "GPIO_PIN_INTR_HILEVEL (HIGH LEVEL)"
 };
 
-#define DELAY 3400 /* microseconds */
-#define DELAYOFF 3450 /* microseconds */
+#define DELAY 3000 /* microseconds */
+#define DELAYOFF 3150 /* microseconds */
 
 LOCAL os_timer_t key_timer;
 LOCAL os_timer_t key_timer_off;
@@ -98,7 +98,7 @@ void user_init(void) {
 			console_printf("Error: GPIO%d not set GPIO_OUTPUT mode\r\n", pin_num[GPIO_LAMP_PIN]);
 	}
 
-	gpio_write(GPIO_LAMP_PIN, 0);
+	gpio_write(GPIO_LAMP_PIN, 1);
 
 	gpio_type = GPIO_PIN_INTR_POSEDGE;
 
